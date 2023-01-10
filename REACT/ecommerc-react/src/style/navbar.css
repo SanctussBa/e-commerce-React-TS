@@ -1,0 +1,94 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: rgb(106, 131, 145);
+    height: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: sticky;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    align-items: flex-end;
+    
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    box-shadow: inset 0px 0px 11px rgba(255, 228, 196, 0.9);
+    border-radius: 5px;
+    color:rgba(255, 228, 196, 0.9);
+    
+}
+.nav-links {
+    display: flex;
+    gap: 50px;
+}
+
+.logo-text {
+    font-family: 'Fleur De Leah', cursive;
+    font-size: 3.5rem;
+}
+.nav-links a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: bisque;
+    font-family: 'Montserrat Alternates', sans-serif;
+    
+}
+
+.nav-links a:hover {
+    cursor: pointer;
+    
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: bisque;
+}
+
+
+.cart-button {
+    background-color: bisque;
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    position: relative;
+    
+    transition: 0.1s ease-in;
+}
+
+.cart-button:hover {
+    cursor: pointer;
+    background-color: white; ;
+}
+
+.cart-svg {
+    height: 30px;
+    width: 30px;
+}
+
+.cart-items-count-indicator {
+    border: 1px solid white;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(25%, 25%);
+
+}
