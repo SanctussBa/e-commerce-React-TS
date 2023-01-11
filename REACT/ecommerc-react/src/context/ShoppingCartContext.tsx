@@ -1,6 +1,12 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useState,
+} from "react";
 import ShoppingCart from "../components/ShoppingCart";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useProductsContext } from "./ProductsContext";
 
 
 type ShoppingCartProviderProps = {
@@ -10,7 +16,6 @@ type ShoppingCartProviderProps = {
 type ShoppingCartContext = {
   openCart: () => void;
   closeCart: () => void;
-
   getItemQuantity: (id: number) => number;
   increaseCartQuantity: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
@@ -32,7 +37,13 @@ export function useShoppingCart() {
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", []);
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+    "shopping-cart",
+    []
+  );
+  const { listOfProducts, setListOfProducts } = useProductsContext();
+
+
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
@@ -41,7 +52,9 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   const closeCart = () => setIsOpen(false);
 
   function getItemQuantity(id: number) {
-    return cartItems.find((item) => item.id === id)?.quantity || 0;
+    const stockQuantity =
+      cartItems.find((item) => item.id === id)?.quantity || 0;
+    return stockQuantity;
   }
 
   function increaseCartQuantity(id: number) {
@@ -81,6 +94,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       return currItems.filter((item) => item.id !== id);
     });
   }
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -91,11 +105,11 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         cartItems,
         cartQuantity,
         openCart,
-        closeCart,
+        closeCart
       }}
     >
       {children}
-      <ShoppingCart isOpen={isOpen} setIsOpen={setIsOpen}/>
+      <ShoppingCart isOpen={isOpen} setIsOpen={setIsOpen} />
     </ShoppingCartContext.Provider>
   );
 }

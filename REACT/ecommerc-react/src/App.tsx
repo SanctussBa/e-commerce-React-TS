@@ -8,17 +8,20 @@ import "./style/main.css";
 import "./style/navbar.css";
 import "./style/sideCart.css";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import { ProductsProvider } from "./context/ProductsContext";
 
 function App() {
   return (
-    <ShoppingCartProvider>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </ShoppingCartProvider>
+    <ProductsProvider>
+      <ShoppingCartProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </ShoppingCartProvider>
+    </ProductsProvider>
   );
 }
 

@@ -1,17 +1,24 @@
-import React from "react";
-import storeItems from "../data/items.json";
+import React, { useEffect } from "react";
+
 import "../style/card.css";
 import StoreItem from "../components/StoreItem";
 
+import { useProductsContext } from "../context/ProductsContext";
+
 const Store = () => {
+  const { listOfProducts, fetchAllProducts } = useProductsContext();
+
+  useEffect(() => {
+    fetchAllProducts();
+  }, []);
+
   return (
     <div className="store-container">
       <h1>Our Products</h1>
       <div className="items-container">
-        {storeItems.map((item) => (
+        {listOfProducts.map((item) => (
           <div className="card-container" key={item.id}>
-            <StoreItem {...item}/>
-            
+            <StoreItem {...item} />
           </div>
         ))}
       </div>
