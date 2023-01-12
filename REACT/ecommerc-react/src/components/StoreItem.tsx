@@ -19,11 +19,15 @@ const StoreItem = ({ id, name, price, image, stock }: IProduct) => {
 
   return (
     <div>
-      <div>
-        <p>Available: {stockCount()}</p>
-        {stockCount() === 1 && <p>Almost sold out</p>}
-      </div>
       <div className="card-img-container">
+        <div className="card-available">
+          <p className="card-available-text">
+            In Stock:{" "}
+            <span className="card-available-count">{stockCount()}</span>
+          </p>
+          {stockCount() === 1 && <p className="last-chance">Last Available</p>}
+          {stockCount() === 0 && <p className="sold-out">Sold Out</p>}
+        </div>
         <img src={`data:image/jpg;base64,${image}`} alt="ProdImg" />
       </div>
       <div className="card-product-price-container">

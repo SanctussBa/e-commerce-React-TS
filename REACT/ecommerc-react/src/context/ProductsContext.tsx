@@ -3,7 +3,6 @@ import { IProduct } from "../components/types";
 import CartItem from "../components/CartItem";
 import { useShoppingCart } from "./ShoppingCartContext";
 
-
 type ProductsContextProps = {
   children: ReactNode;
 };
@@ -17,8 +16,6 @@ type ProductsContext = {
 
 const ProductsContext = createContext({} as ProductsContext);
 
-
-
 export function useProductsContext() {
   return useContext(ProductsContext);
 }
@@ -30,19 +27,23 @@ export function ProductsProvider({ children }: ProductsContextProps) {
   const fetchAllProducts = async () => {
     const response = await fetch("http://localhost:5292/Products");
     const allProducts = await response.json();
-    setListOfProducts(allProducts);
+    setListOfProducts(allProducts.sort(() => Math.random() - 0.5));
   };
 
   const payForProducts = () => {
-    console.log(cartItems)
-
-  }
+    console.log(cartItems);
+  };
 
   return (
     <ProductsContext.Provider
-    value={{listOfProducts, fetchAllProducts, setListOfProducts, payForProducts}}>
-        {children}
-
+      value={{
+        listOfProducts,
+        fetchAllProducts,
+        setListOfProducts,
+        payForProducts,
+      }}
+    >
+      {children}
     </ProductsContext.Provider>
-  )
+  );
 }

@@ -39,11 +39,12 @@ const ShoppingCart = ({ isOpen, setIsOpen }: ShoppingCartProps) => {
                 }, 0)
               )}
             </h3>
-            
           </div>
           <div className="cart-pay-container">
-              <button className="cart-pay-button" onClick={payForProducts}>Pay</button>
-            </div>
+            <button className="cart-pay-button" onClick={payForProducts}>
+              Pay
+            </button>
+          </div>
         </div>
       </div>
     </div>

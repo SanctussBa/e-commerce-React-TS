@@ -1,141 +1,207 @@
-
 .store-container {
-    background-color: rgb(247, 247, 247);
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    
+  background-color: rgb(247, 247, 247);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 100px;
 }
 
 .store-container h1 {
-    text-align: center;
-    padding: 30px 0;
+  text-align: center;
+  padding: 30px 0;
 
-    font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.store-select-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.select-label {
+  margin-right: 20px;
+}
+
+.select {
+  font-size: 1rem;
+  width: auto;
+
+  padding: 5px;
+  border: 1px solid cadetblue;
+}
+
+.option {
+  margin: 5px;
 }
 
 .items-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .card-container {
-    background-color: white;
-    width: 300px;
-    height: 350px;
-    border-radius: 10px;
-    box-shadow: 5px 7px 19px 2px rgba(190, 190, 190, 0.7);
+  background-color: white;
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 5px 7px 19px 2px rgba(190, 190, 190, 0.7);
 }
 
 .card-img-container {
-    height: 200px;
-    width: 300px;
-    
+  height: 200px;
+  width: 300px;
+  position: relative;
 }
 
-.card-img-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: 1px solid rgb(216, 213, 213);
+.card-available {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 228, 196, 0.8);
+  padding: 5px;
+  border-radius: 5px;
+}
 
+.last-chance {
+  padding-top: 5px;
+  color: red;
+}
+
+.sold-out {
+  margin-top: 5px;
+  background-color: rgb(231, 99, 99);
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.card-available-text {
+  font-size: 0.6rem;
+}
+
+.card-available-count {
+  font-size: 1rem;
+  color: cadetblue;
+  font-weight: bold;
+}
+.card-img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 1px solid rgb(216, 213, 213);
 }
 
 .card-product-container {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 .card-product-price-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
-    align-items: baseline;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: baseline;
+  margin-bottom: 20px;
+  height: 50px;
 }
 
 .card-price {
-    color: rgb(117, 117, 117)
+  color: rgb(117, 117, 117);
 }
 
 .card-add-empty {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .button-add-to-cart {
-    height: 35px;
-    width: 95%;
-    border: none;
-    background-color: cadetblue;
-    font-size: 1.2rem;
-    border-radius: 4px;
-    color: white;
-    transition: 0.1s ease-in;
-
+  height: 35px;
+  width: 95%;
+  border: none;
+  background-color: cadetblue;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  color: white;
+  transition: 0.1s ease-in;
 }
 
 .card-add-counter {
-    display: flex;
-    flex-direction: row;
-    height: 70px;
-
+  display: flex;
+  flex-direction: row;
+  height: 70px;
 }
 .counter-middle {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.button-minus, .button-plus {
-    height: 35px;
-    width: 35px;
-    background-color: cadetblue;
-    font-size: 1.2rem;
-    border-radius: 4px;
-    color: white;
-    border: none;
-    transition: 0.1s ease-in;
+.counter-plus {
+  width: 35px;
+  height: 35px;
+
+  overflow: visible;
+  padding-left: 5px;
+  color: red;
 }
 
-.button-add-to-cart:hover, .button-minus:hover, .button-plus:hover{
-    cursor: pointer;
-    background-color: rgb(117, 198, 201);
+.button-minus,
+.button-plus {
+  height: 35px;
+  width: 35px;
+  background-color: cadetblue;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  transition: 0.1s ease-in;
+}
+
+.button-add-to-cart:hover,
+.button-minus:hover,
+.button-plus:hover {
+  cursor: pointer;
+  background-color: rgb(117, 198, 201);
 }
 
 .counter-count {
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-remove {
-    height: 30px;
-    width: 70px;
-    border: none;
-    background-color: rgb(238, 103, 94);
-    font-size: .9rem;
-    border-radius: 4px;
-    color: white;
-    transition: 0.1s ease-in;
+  height: 30px;
+  width: 70px;
+  border: none;
+  background-color: rgb(238, 103, 94);
+  font-size: 0.9rem;
+  border-radius: 4px;
+  color: white;
+  transition: 0.1s ease-in;
 }
 
 .button-remove:hover {
-    cursor: pointer;
-    background-color: rgb(245, 146, 139);
+  cursor: pointer;
+  background-color: rgb(245, 146, 139);
 }
 
 .counter-number {
-    font-size: 1.5rem;
-    margin-right: 5px;
-    color: blueviolet;
-    font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: 5px;
+  color: blueviolet;
+  font-weight: bold;
 }
 
 .card-product-name {
-    font-size: 1rem;
+  font-size: 1rem;
 }

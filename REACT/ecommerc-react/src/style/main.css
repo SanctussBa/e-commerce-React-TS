@@ -1,12 +1,64 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family:Arial, Helvetica, sans-serif;
-    color: darkslategray
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
 }
 
+.home-container {
+  width: 80%;
+  height: 80vh;
+  background-image: url(../../public/imgs/background.jpg);
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 10%;
+  position: relative;
+}
+
+.home-text-container {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  background-color: rgba(233, 232, 232, 0.9);
+  padding: 50px;
+  border-radius: 20px;
+  border: 8px solid white;
+}
+
+.home-text-title {
+  font-family: "Montserrat Alternates", sans-serif;
+  margin-bottom: 50px;
+}
+
+.home-text-content {
+  position: relative;
+  font-size: 1.3rem;
+  font-family: "Montserrat Alternates", sans-serif;
+  padding-bottom: 10px;
+}
+
+.link-shop-now {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  background-color: cadetblue;
+  padding: 10px 50px;
+  border-radius: 17px;
+  border: 8px solid white;
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 1rem;
+  transition: 0.3s ease-out;
+}
+
+.link-shop-now:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-out;
+  background-color: rgb(121, 203, 206);
+}

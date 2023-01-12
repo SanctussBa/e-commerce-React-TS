@@ -17,9 +17,13 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
       <div className="cart-item-container-left">
         <div className="cart-item-img-name-container">
           <div className="cart-img-container">
-            <img className="cart-item-img" src={`data:image/jpg;base64,${item.image}`} alt="pic"/>
+            <img
+              className="cart-item-img"
+              src={`data:image/jpg;base64,${item.image}`}
+              alt="pic"
+            />
           </div>
-          <div >
+          <div>
             <h3>
               {item.name}{" "}
               {quantity > 1 && (
@@ -34,7 +38,12 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
       <div className="cart-item-container-right">
         <div>{formatCurrency(item.price * quantity)}</div>
         <div>
-          <button className="cart-item-remove-button" onClick={() => removeFromCart(item.id)}>&times;</button>
+          <button
+            className="cart-item-remove-button"
+            onClick={() => removeFromCart(item.id)}
+          >
+            &times;
+          </button>
         </div>
       </div>
     </div>
