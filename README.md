@@ -43,7 +43,7 @@ From your command line, first clone this repo:
 
 ```
 # Clone this repo
->>> git clone https://github.com/SanctussBa/e-commerce-React-TS
+>>> git clone git@github.com:SanctussBa/e-commerce-React-TS.git
 
 # Go into the repository
 >>> cd .\e-commerce-React-TS\
